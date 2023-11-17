@@ -1,5 +1,46 @@
 // index.js
 class MenuBurger extends HTMLElement {
+    createStyle() {
+        const style = document.createElement('style');
+        style.type = 'text/css';
+        let menuBurgerStyle = '.menu-burger {';
+        let menuBurgerLinkStyle = '.menu-burger a {'
+        style.textContent = '';
+
+        // Positionnement du menu
+        const position = this.getAttribute('position') || '';
+        switch (position) {
+            case 'left':
+
+                break;
+            case 'right':
+                menuBurgerStyle = menuBurgerStyle + 'right: 0; ';
+
+                break;
+            default:
+                break;
+        }
+
+
+        // Couleur du texte
+        const colorTxt = this.getAttribute('colorText') || '';
+        if (colorTxt.length > 0) {
+            menuBurgerLinkStyle = menuBurgerLinkStyle + 'color: ' + colorTxt + ';'
+        }
+        // Couleur du background
+        const colorBg = this.getAttribute('colorBg') || '';
+        if (colorBg.length > 0) {
+            menuBurgerStyle = menuBurgerStyle + 'background-color: ' + colorBg + ';'
+        }
+
+        menuBurgerStyle += '}';
+        menuBurgerLinkStyle += '}';
+
+
+        style.textContent += menuBurgerStyle + menuBurgerLinkStyle + '}';
+        document.body.appendChild(style);
+    }
+
     connectedCallback() {
         // Création du conteneur global
         const containerDiv = document.createElement('div');
@@ -21,18 +62,7 @@ class MenuBurger extends HTMLElement {
         const menuBurgerDiv = document.createElement('ul');
         menuBurgerDiv.className = 'menu-burger';
 
-        const position = this.getAttribute('position') || '';
-
-        switch (position) {
-            case 'left':
-
-                break;
-            case 'right':
-
-                break;
-            default:
-                break;
-        }
+        this.createStyle();
 
         // Séparation des li avec la classe menu-burger-item des autres éléments
         const menuBurgerItems = Array.from(this.querySelectorAll('li.menu-burger-item'));
@@ -56,6 +86,8 @@ class MenuBurger extends HTMLElement {
             }
         });
     }
+
+
 }
 
 customElements.define('menu-burger', MenuBurger);

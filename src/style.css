@@ -43,6 +43,7 @@
     .trigger span{
         height: 2px;
         width: 15px;
+        color: hsl(240, 50%, 80%);
         background-color: black;
         display: block;
     }

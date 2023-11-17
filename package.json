@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "authors": [
+    {"name": "CADET Theodore", "email": "theodore@example.com"},
+    {"name": "DELAFOSSE Alexandre", "email": "alexandre@example.com"}
+  ],
   "license": "ISC"
 }

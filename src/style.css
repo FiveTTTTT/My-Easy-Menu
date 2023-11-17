@@ -1,0 +1,49 @@
+.menu-burger {
+    display: none;
+}
+
+
+
+@media screen and (max-width:768px) {
+
+    .menu-burger-item {
+        display: none;
+    }
+
+    .menu-burger{
+        display: block;
+    }
+
+    .menu-burger .menu-burger-item  {
+        display: block;
+    }
+
+    .menu-burger  {
+        position: fixed;
+        top: 0px;
+        width: 30vw;
+        height: 100vh;
+        background-color: rgb(55, 58, 71);
+        padding: 2vh;
+        display: none;
+        z-index: 10;
+    }
+
+    .menu-burger.open {
+        display: block;
+    }
+
+    .trigger {
+        width: fit-content;
+        gap: 2px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .trigger span{
+        height: 2px;
+        width: 15px;
+        background-color: black;
+        display: block;
+    }
+}

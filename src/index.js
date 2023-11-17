@@ -1,61 +1,60 @@
+// index.js
 class MenuBurger extends HTMLElement {
     connectedCallback() {
+        // Création du conteneur global
+        const containerDiv = document.createElement('div');
 
+        // Ajout des trois spans dans le conteneur global
+        const span1 = document.createElement('span');
+        const span2 = document.createElement('span');
+        const span3 = document.createElement('span');
+
+        containerDiv.appendChild(span1);
+        containerDiv.appendChild(span2);
+        containerDiv.appendChild(span3);
+
+        // Ajout du conteneur global à l'élément menu-burger
+        containerDiv.className = 'trigger';
+        this.appendChild(containerDiv);
+
+        // Création du conteneur ul
         const menuBurgerDiv = document.createElement('ul');
         menuBurgerDiv.className = 'menu-burger';
-        const content = this.getAttribute('content') || '[]';
-        console.log(content);
-        let menusElements = JSON.parse(content);
-        console.log(menusElements);
-        for (let i = 0; i < menusElements.length; i++) {
-            const li = document.createElement('li');
-            const barLink = document.createElement('a');
-            console.log(menusElements[i]);
-            barLink.innerText = menusElements[i].texte;
-            barLink.href = menusElements[i].url
-            barLink.className = 'bar';
 
-            barLink.style.color = "#fff";
-            barLink.style.textDecoration = "none";
+        const position = this.getAttribute('position') || '';
 
+        switch (position) {
+            case 'left':
 
-            li.appendChild(barLink);
-            menuBurgerDiv.appendChild(li);
+                break;
+            case 'right':
+
+                break;
+            default:
+                break;
         }
 
-        menuBurgerDiv.style.position = "fixed";
-        menuBurgerDiv.style.top = "0";
-        menuBurgerDiv.style.width = "30vw";
-        menuBurgerDiv.style.height = "100vh";
-        menuBurgerDiv.style.listStyle = "none";
-        menuBurgerDiv.style.backgroundColor = "#373a47";
-        menuBurgerDiv.style.padding = "2vh";
-        menuBurgerDiv.style.display = "none";
-        menuBurgerDiv.style.zIndex = "10";
+        // Séparation des li avec la classe menu-burger-item des autres éléments
+        const menuBurgerItems = Array.from(this.querySelectorAll('li.menu-burger-item'));
 
+        // Ajout des clones des li avec la classe menu-burger-item dans le conteneur ul
+        menuBurgerItems.forEach(item => menuBurgerDiv.appendChild(item.cloneNode(true)));
 
-        const imgBurger = document.createElement('img');
-        imgBurger.src = "OIP.jpeg";
-        imgBurger.onclick = function () {
-            menuBurgerDiv.style.display = "block"
-        }
-        this.appendChild(imgBurger);
-        // const menuBurgerDiv = document.createElement('div');
-        // menuBurgerDiv.className = 'menu-burger';
-        //
-        // for (let i = 0; i < nbDiv; i++) {
-        //     const barDiv = document.createElement('div');
-        //     barDiv.innerText = "bruh"
-        //     barDiv.className = 'bar';
-        //     menuBurgerDiv.appendChild(barDiv);
-        // }
-
+        // Ajout du conteneur ul à l'élément menu-burger
         this.appendChild(menuBurgerDiv);
 
+        // Ajout d'un gestionnaire d'événements pour le clic sur l'élément avec la classe 'trigger'
+        containerDiv.addEventListener('click', () => {
+            menuBurgerDiv.classList.toggle('open');
+        });
 
-        // Ajouter un paragraphe sans remplacer le contenu précédent
-        this.insertAdjacentHTML('beforeend', '<p>Ceci est un paragraphe ajouté.</p>');
-        this.removeAttribute('content')
+        // Ajout d'un gestionnaire d'événements pour le clic en dehors de l'élément
+        document.addEventListener('click', (event) => {
+            const isInsideMenuBurger = this.contains(event.target) || menuBurgerDiv.contains(event.target);
+            if (!isInsideMenuBurger) {
+                menuBurgerDiv.classList.remove('open');
+            }
+        });
     }
 }
 

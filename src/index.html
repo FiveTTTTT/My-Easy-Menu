@@ -1,24 +1,33 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Burger Example</title>
-    <!-- Inclure votre fichier JavaScript qui définit le composant personnalisé -->
     <script src="index.js" defer></script>
     <script src="myscript.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- Utilisez votre balise personnalisée dans le corps de votre HTML -->
-<menu-burger content='[{"texte":"Home", "url":"https://eldenring.wiki.fextralife.com/Teardrop+Scarab#gsc.tab=0&gsc.q=invisible&gsc.sort="},{"texte":"Favorites", "url":"https://eip.gg/elden-ring/build-planner/"}]'></menu-burger>
-<script src="myscript.js"></script>
-<style>
-    *{
-        position: relative;
-        margin: 0;
-        padding: 0;
-        z-index: 1;
-    }
-</style>
+    <header> 
+        <menu-burger position="left">
+            <li class="menu-burger-item"><a href="https://eldenring.wiki.fextralife.com/Teardrop+Scarab#gsc.tab=0&gsc.q=invisible&gsc.sort=">Home</a></li>
+            <li class="menu-burger-item"><a href="https://eip.gg/elden-ring/build-planner/">Favorites</a></li>
+            <!-- Ajoutez d'autres éléments li au besoin -->
+        </menu-burger>
+    </header>
+    <!-- Utilisez votre balise personnalisée dans le corps de votre HTML -->
+
+
+    <script src="myscript.js"></script>
+    <style>
+        * {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            z-index: 1;
+        }
+    </style>
 </body>
 </html>

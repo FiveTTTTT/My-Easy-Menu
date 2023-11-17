@@ -25,12 +25,29 @@
         height: 100vh;
         background-color: rgb(55, 58, 71);
         padding: 2vh;
-        display: none;
+        z-index: 10;
+        transition: transform 0.4s, z-index 0.4s;
         z-index: 10;
     }
 
     .menu-burger.open {
-        display: block;
+        z-index: 100; /* ou une valeur plus élevée que la z-index actuelle du reste du contenu */
+    }
+
+    .menu-burger.left {
+        transform: translateX(-35vw);
+    }
+
+    .menu-burger.open.left {
+        transform: translateX(0vw);
+    }
+
+    .menu-burger.right {
+        transform: translateX(35vw);
+    }
+
+    .menu-burger.open.right {
+        transform: translateX(0vw);
     }
 
     .trigger {

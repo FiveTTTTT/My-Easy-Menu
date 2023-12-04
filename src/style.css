@@ -24,7 +24,6 @@
 
     .menu-burger  {
         position: fixed;
-        top: 0px;
         width: 30vw;
         height: 100vh;
         background-color: rgb(55, 58, 71);
@@ -62,6 +61,21 @@
     }
 
     .menu-burger.open.top {
+        transform: translateX(0vw);
+        display: flex;
+        gap: 20px;
+        justify-content: flex-start;
+    }
+
+    /* cas bottom*/
+
+    .menu-burger.bottom {
+        transform: translateY(35vw);
+        width: 100vw;
+        height: 20vh;
+    }
+
+    .menu-burger.open.bottom {
         transform: translateX(0vw);
         display: flex;
         gap: 20px;

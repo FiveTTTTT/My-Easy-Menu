@@ -19,6 +19,10 @@ class MenuBurger extends HTMLElement {
                 break;
                 case 'top':
                     menuBurgerStyle = menuBurgerStyle;
+
+                break;
+                case 'bottom':
+                    menuBurgerStyle = menuBurgerStyle + 'bottom: 0;';
             default:
                 break;
         }

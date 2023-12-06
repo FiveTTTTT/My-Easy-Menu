@@ -1,6 +1,6 @@
 {
   "name": "frameworkpfe",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,5 +10,9 @@
     {"name": "CADET Theodore", "email": "theodore@example.com"},
     {"name": "DELAFOSSE Alexandre", "email": "alexandre@example.com"}
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "files": [
+    "src/index.js",
+    "src/style.css"
+  ]
 }

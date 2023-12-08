@@ -7,7 +7,7 @@ class MenuBurger extends HTMLElement {
         let triggerStyle = '.trigger {';
         let menuBurgerLinkStyle = '.menu-burger a {';
         style.textContent = '';
-    
+
         // Positionnement du menu
         const position = this.getAttribute('position') || '';
         switch (position) {
@@ -18,7 +18,7 @@ class MenuBurger extends HTMLElement {
                 menuBurgerStyle = menuBurgerStyle + 'right: 0; top: 0; ';
                 triggerStyle = triggerStyle + 'align-items: flex-end;';
 
-            break;
+                break;
             case 'top':
                 menuBurgerStyle = menuBurgerStyle + 'top: 0; ';
                 break;
@@ -46,8 +46,8 @@ class MenuBurger extends HTMLElement {
         }
 
         menuBurgerStyle += '}';
-        
-    triggerStyle += '}';
+
+        triggerStyle += '}';
         menuBurgerLinkStyle += '}';
 
 
@@ -73,7 +73,7 @@ class MenuBurger extends HTMLElement {
         this.appendChild(containerDiv);
 
         // Création du conteneur ul
-        const menuBurgerDiv = document.createElement('div');        
+        const menuBurgerDiv = document.createElement('div');
 
 
         // Création du conteneur global
@@ -92,6 +92,12 @@ class MenuBurger extends HTMLElement {
         containerDiv2.className = 'trigger closeBurger';
         menuBurgerDiv.appendChild(containerDiv2);
 
+        // Ajout du gestionnaire d'événements de clic à containerDiv2
+        containerDiv2.addEventListener('click', () => {
+            menuBurgerDiv.classList.toggle('open');
+        });
+        
+        // Création du conteneur ul
         const menuBurgerUl = document.createElement('ul');
         menuBurgerDiv.appendChild(menuBurgerUl);
 

@@ -87,11 +87,9 @@ class MenuBurger extends HTMLElement {
         // Ajout des trois spans dans le conteneur global
         const span21 = document.createElement('span');
         const span22 = document.createElement('span');
-        const span23 = document.createElement('span');
 
         containerDiv2.appendChild(span21);
         containerDiv2.appendChild(span22);
-        containerDiv2.appendChild(span23);
 
         // Ajout du conteneur global à l'élément menu-burger
         containerDiv2.className = 'trigger closeBurger';

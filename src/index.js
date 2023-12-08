@@ -51,7 +51,7 @@ class MenuBurger extends HTMLElement {
         }
         // Background-image
         const backgroundImage = this.getAttribute('imageBg') || '';
-        if (backgroundImage.length > 0 && position == 'full') {
+        if (backgroundImage.length > 0) {
             menuBurgerStyle = menuBurgerStyle + 'background-image: url(' + backgroundImage + ');'
         }
 

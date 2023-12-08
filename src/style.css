@@ -14,15 +14,15 @@
         display: none;
     }
 
-    .menu-burger{
+    .menu-burger {
         display: block;
     }
 
-    .menu-burger .menu-burger-item  {
+    .menu-burger .menu-burger-item {
         display: block;
     }
 
-    .menu-burger  {
+    .menu-burger {
         position: fixed;
         width: 30vw;
         height: 100vh;
@@ -32,7 +32,7 @@
         transition: transform 0.4s, z-index 0.4s;
     }
 
-        /* cas left*/
+    /* cas left*/
 
     .menu-burger.left {
         transform: translateX(-35vw);
@@ -42,7 +42,7 @@
         transform: translateX(0vw);
     }
 
-        /* cas right*/
+    /* cas right*/
 
     .menu-burger.right {
         transform: translateX(35vw);
@@ -89,7 +89,7 @@
         transform-origin: center;
         width: 100vw;
     }
-    
+
     .menu-burger.open.full {
         transform: scale(1);
         transition: transform 0.4s ease-in-out;
@@ -104,11 +104,13 @@
         flex-direction: column;
     }
 
-    .trigger span{
+    .trigger span {
         height: 2px;
         width: 15px;
         color: hsl(240, 50%, 80%);
         background-color: black;
         display: block;
     }
+
+    .closeBurger {}
 }

@@ -11,20 +11,23 @@ class MenuBurger extends HTMLElement {
         const position = this.getAttribute('position') || '';
         switch (position) {
             case 'left':
-
-                break;
+                menuBurgerStyle = menuBurgerStyle + 'top: 0; ';
+            break;
             case 'right':
-                menuBurgerStyle = menuBurgerStyle + 'right: 0; ';
+                menuBurgerStyle = menuBurgerStyle + 'right: 0; top: 0; ';
+            break;
+            case 'top':
+                menuBurgerStyle = menuBurgerStyle + 'top: 0; ';
+            break;
+            case 'bottom':
+                menuBurgerStyle = menuBurgerStyle + 'bottom: 0;';
 
-                break;
-                case 'top':
-                    menuBurgerStyle = menuBurgerStyle;
-
-                break;
-                case 'bottom':
-                    menuBurgerStyle = menuBurgerStyle + 'bottom: 0;';
+            break;
+            case 'full':
+                menuBurgerStyle = menuBurgerStyle + 'top: 0; ' ;
             default:
-                break;
+            
+            break;
         }
 
 

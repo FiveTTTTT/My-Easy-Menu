@@ -82,6 +82,19 @@
         justify-content: flex-start;
     }
 
+    /* Cas full */
+
+    .menu-burger.full {
+        transform: scale(0);
+        transform-origin: center;
+        width: 100vw;
+    }
+    
+    .menu-burger.open.full {
+        transform: scale(1);
+        transition: transform 0.4s ease-in-out;
+    }
+
     /* clique menu burger */
 
     .trigger {

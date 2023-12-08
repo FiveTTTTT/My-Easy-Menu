@@ -4,9 +4,10 @@ class MenuBurger extends HTMLElement {
         const style = document.createElement('style');
         style.type = 'text/css';
         let menuBurgerStyle = '.menu-burger {';
+        let triggerStyle = '.trigger {';
         let menuBurgerLinkStyle = '.menu-burger a {';
         style.textContent = '';
-
+    
         // Positionnement du menu
         const position = this.getAttribute('position') || '';
         switch (position) {
@@ -15,8 +16,9 @@ class MenuBurger extends HTMLElement {
                 break;
             case 'right':
                 menuBurgerStyle = menuBurgerStyle + 'right: 0; top: 0; ';
-                this.style = 'display: flex; flex-direction: row-reverse;';
-                break;
+                triggerStyle = triggerStyle + 'align-items: flex-end;';
+
+            break;
             case 'top':
                 menuBurgerStyle = menuBurgerStyle + 'top: 0; ';
                 break;
@@ -44,10 +46,12 @@ class MenuBurger extends HTMLElement {
         }
 
         menuBurgerStyle += '}';
+        
+    triggerStyle += '}';
         menuBurgerLinkStyle += '}';
 
 
-        style.textContent += menuBurgerStyle + menuBurgerLinkStyle + '}';
+        style.textContent += menuBurgerStyle + triggerStyle + menuBurgerLinkStyle + '}';
         document.body.appendChild(style);
     }
 

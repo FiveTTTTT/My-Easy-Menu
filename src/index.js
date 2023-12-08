@@ -44,6 +44,11 @@ class MenuBurger extends HTMLElement {
         if (colorBg.length > 0) {
             menuBurgerStyle = menuBurgerStyle + 'background-color: ' + colorBg + ';'
         }
+        // Font-family
+        const fontFamily = this.getAttribute('fontFamily') || '';
+        if (fontFamily.length > 0) {
+            menuBurgerLinkStyle = menuBurgerLinkStyle + 'font-family: ' + fontFamily + ';'
+        }
 
         menuBurgerStyle += '}';
 

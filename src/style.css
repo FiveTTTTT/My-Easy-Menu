@@ -1,6 +1,9 @@
 .menu-burger {
     display: none;
 }
+.menu-burger a{
+    text-decoration: none;
+}
 
 * {
     position: relative;
@@ -8,7 +11,7 @@
     padding: 0;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
     .menu-burger-item {
         display: none;
     }
@@ -25,14 +28,12 @@
         position: fixed;
         width: 30vw;
         height: 100vh;
-        background-color: rgb(55, 58, 71);
         padding: 2vh;
         z-index: 10;
         transition: transform 0.4s, z-index 0.4s;
     }
 
     /* cas left*/
-
     .menu-burger.left {
         transform: translateX(-35vw);
     }
@@ -42,7 +43,6 @@
     }
 
     /* cas right*/
-
     .menu-burger.right {
         transform: translateX(35vw);
     }
@@ -51,8 +51,13 @@
         transform: translateX(0vw);
     }
 
-    /* cas top*/
+    .menu-burger.open.right ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
 
+    /* cas top*/
     .menu-burger.top {
         transform: translateY(-35vw);
         width: 100vw;
@@ -67,7 +72,6 @@
     }
 
     /* cas bottom*/
-
     .menu-burger.bottom {
         transform: translateY(35vw);
         width: 100vw;
@@ -82,7 +86,6 @@
     }
 
     /* Cas full */
-
     .menu-burger.full {
         transform: scale(0);
         transform-origin: center;
@@ -95,7 +98,6 @@
     }
 
     /* clique menu burger */
-
     .trigger {
         width: auto;
         gap: 2px;
@@ -110,16 +112,17 @@
         background-color: black;
         display: block;
     }
-.menu-burger.open .closeBurger span:nth-child(1) {
-    transform: translateY(0px) rotate(45deg);
-}
 
-.menu-burger.open .closeBurger span:nth-child(2) {
-    transform: translateY(-4px) rotate(-45deg);
-}
+    .menu-burger.open .closeBurger span:nth-child(1) {
+        transform: translateY(0px) rotate(45deg);
+    }
 
-.menu-burger.open .closeBurger span:nth-child(3) {
-    transform: translateY(0) rotate(45deg);
-}
+    .menu-burger.open .closeBurger span:nth-child(2) {
+        transform: translateY(-4px) rotate(-45deg);
+    }
+
+    .menu-burger.open .closeBurger span:nth-child(3) {
+        transform: translateY(0) rotate(45deg);
+    }
 
 }

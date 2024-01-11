@@ -20,10 +20,10 @@ class MenuBurger extends HTMLElement {
 
                 break;
             case 'top':
-                menuBurgerStyle = menuBurgerStyle + 'top: 0; ';
+                menuBurgerStyle = menuBurgerStyle + 'top: -1vh; ';
                 break;
             case 'bottom':
-                menuBurgerStyle = menuBurgerStyle + 'bottom: 0;';
+                menuBurgerStyle = menuBurgerStyle + 'bottom: -1vh;';
 
                 break;
             case 'full':
@@ -48,6 +48,11 @@ class MenuBurger extends HTMLElement {
         const fontFamily = this.getAttribute('fontFamily') || '';
         if (fontFamily.length > 0) {
             menuBurgerLinkStyle = menuBurgerLinkStyle + 'font-family: ' + fontFamily + ';'
+        }
+        // Background-image
+        const backgroundImage = this.getAttribute('imageBg') || '';
+        if (backgroundImage.length > 0) {
+            menuBurgerStyle = menuBurgerStyle + 'background-image: url(' + backgroundImage + ');'
         }
 
         menuBurgerStyle += '}';

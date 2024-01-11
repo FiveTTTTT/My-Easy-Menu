@@ -120,6 +120,13 @@
     .menu-burger.open .closeBurger span:nth-child(2) {
         transform: translateY(-4px) rotate(-45deg);
     }
+<<<<<<< HEAD
+
+    .menu-burger.open .closeBurger span:nth-child(3) {
+        transform: translateY(0) rotate(45deg);
+    }
+=======
+>>>>>>> 2b353b2fbc3d87dd8ee1c51a6d4c16e5086d743f
 
     .menu-burger.open .closeBurger span:nth-child(3) {
         transform: translateY(0) rotate(45deg);

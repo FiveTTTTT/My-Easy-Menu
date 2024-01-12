@@ -1,3 +1,13 @@
+* {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+menu-burger{
+    margin: 10px;
+}
+
 .menu-burger {
     display: none;
 }
@@ -7,13 +17,12 @@
 
 .trigger {
     display: none;
+    margin-right: 15px;
 }
 
-
-* {
-    position: relative;
-    margin: 0;
-    padding: 0;
+.trigger.closeBurger {
+    margin-top: 15px;
+    margin-right: 10px;
 }
 
 /* cas left*/

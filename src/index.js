@@ -110,21 +110,38 @@ class MenuBurger extends HTMLElement {
     }
 
     connectedCallback() {
+        // Récupération de l'attribut data-use-image
+        const useImage = this.getAttribute('data-use-image') === 'true';
+    
         // Création du conteneur global
         const containerDiv = document.createElement('div');
-
-        // Ajout des trois spans dans le conteneur global
-        const span1 = document.createElement('span');
-        const span2 = document.createElement('span');
-        const span3 = document.createElement('span');
-
-        containerDiv.appendChild(span1);
-        containerDiv.appendChild(span2);
-        containerDiv.appendChild(span3);
-
+    
+        if (useImage) {
+            // Récupération de la source de l'image à partir de l'attribut data-image-src
+            const imageSrc = this.getAttribute('data-image-src');
+    
+            // Création de l'élément image
+            const img = document.createElement('img');
+            // Spécification de la source de votre image
+            img.src = imageSrc || 'chemin/vers/votre/image-par-defaut.png'; // Remplacez par le chemin de votre image par défaut
+    
+            // Ajout de l'élément image au conteneur global
+            containerDiv.appendChild(img);
+        } else {
+            // Ajout des trois spans dans le conteneur global
+            const span1 = document.createElement('span');
+            const span2 = document.createElement('span');
+            const span3 = document.createElement('span');
+    
+            containerDiv.appendChild(span1);
+            containerDiv.appendChild(span2);
+            containerDiv.appendChild(span3);
+        }
+    
         // Ajout du conteneur global à l'élément menu-burger
         containerDiv.className = 'trigger';
         this.appendChild(containerDiv);
+    
 
         // Création du conteneur ul
         const menuBurgerDiv = document.createElement('div');
@@ -170,6 +187,8 @@ class MenuBurger extends HTMLElement {
         // Ajout d'un gestionnaire d'événements pour le clic sur l'élément avec la classe 'trigger'
         containerDiv.addEventListener('click', () => {
             menuBurgerDiv.classList.toggle('open');
+
+
         });
 
         // Ajout d'un gestionnaire d'événements pour le clic en dehors de l'élément

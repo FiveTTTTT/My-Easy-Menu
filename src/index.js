@@ -4,7 +4,7 @@ class MenuBurger extends HTMLElement {
         const style = document.createElement('style');
         style.type = 'text/css';
         let menuBurgerStyle = '.menu-burger {';
-        const mediaQueryAttribute = this.getAttribute('media-query');
+        const mediaQueryAttribute = this.getAttribute('media-query') || 'max-width:768px' ;
         let triggerStyle = '.trigger {';
         let menuBurgerLinkStyle = '.menu-burger a {';
         style.textContent = '';

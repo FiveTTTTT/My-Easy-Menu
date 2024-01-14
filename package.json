@@ -1,0 +1,28 @@
+{
+  "name": "my-easy-menu",
+  "version": "2.4.3",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "authors": [
+    {
+      "name": "CADET Theodore",
+      "email": "theodore.cadet@edu.devinci.fr"
+    },
+    {
+      "name": "DELAFOSSE Alexandre",
+      "email": "alexandre.delafosse@edu.devinci.fr"
+    }
+  ],
+  "license": "ISC",
+  "files": [
+    "src/index.js",
+    "src/setup.mjs",
+    "src/style.css"
+  ],
+  "dependencies": {
+    "inquirer": "^9.2.12"
+  }
+}
